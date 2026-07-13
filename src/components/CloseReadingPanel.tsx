@@ -1,4 +1,5 @@
 import { CHARACTER_BY_ID } from '../data/characters';
+import { DOMAIN_COLORS, DOMAIN_LABELS, TERM_BY_ID, TERM_LINKS } from '../data/terms';
 import { parseLbCitation } from '../data/bookLines';
 import { LOCATION_BY_ID } from '../data/locations';
 import { INTERACTIONS } from '../data/interactions';
@@ -203,6 +204,57 @@ export default function CloseReadingPanel() {
                   </div>
                 </div>
               ))}
+            </div>
+          </>
+        );
+      })()}
+
+      {selection?.kind === 'term' && (() => {
+        const t = TERM_BY_ID[selection.id];
+        if (!t) return null;
+        const related = TERM_LINKS.filter((l) => l.source === t.id || l.target === t.id);
+        return (
+          <>
+            <div className="flex items-baseline justify-between gap-2">
+              <span className="font-display text-xl italic text-slate-50">{t.term}</span>
+              <span
+                className="text-[11px] px-1.5 py-0.5 rounded-full border whitespace-nowrap"
+                style={{ color: DOMAIN_COLORS[t.domain], borderColor: DOMAIN_COLORS[t.domain] }}
+              >
+                {t.lang} · {DOMAIN_LABELS[t.domain]}
+              </span>
+            </div>
+            <p className="text-[15px] text-slate-100 leading-relaxed">{t.gloss}</p>
+            {t.note && (
+              <p className="text-[13.5px] italic font-reading text-sepia-200 leading-relaxed border-l-2 border-sepia-600/60 pl-2.5">
+                {t.note}
+              </p>
+            )}
+            <div className="text-[11px] uppercase tracking-widest text-slate-500 pt-1">
+              Related terms ({related.length})
+            </div>
+            <div className="space-y-2">
+              {related.map((l, idx) => {
+                const other = TERM_BY_ID[l.source === t.id ? l.target : l.source];
+                return (
+                  <button
+                    key={idx}
+                    onClick={() => setSelection({ kind: 'term', id: other.id })}
+                    className="w-full text-left rounded-lg border border-slate-700 bg-slate-900/70 p-2.5 hover:border-orange-600/60 transition-colors"
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="flex items-center gap-1.5 text-[15px] italic text-slate-100">
+                        <span className="w-2 h-2 rounded-full shrink-0" style={{ background: DOMAIN_COLORS[other.domain] }} />
+                        {other.term}
+                      </span>
+                      <span className="text-[11px] uppercase tracking-wider text-slate-400 whitespace-nowrap">
+                        {l.relation}
+                      </span>
+                    </div>
+                    {l.note && <p className="text-[13px] text-slate-400 mt-1">{l.note}</p>}
+                  </button>
+                );
+              })}
             </div>
           </>
         );

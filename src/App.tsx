@@ -5,14 +5,16 @@ import GroupFilters from './components/GroupFilters';
 import NetworkGraph from './components/NetworkGraph';
 import MapView from './components/MapView';
 import StreamGraph from './components/StreamGraph';
+import TermsGraph from './components/TermsGraph';
 import SidePanel from './components/SidePanel';
 
-type View = 'network' | 'map' | 'stream';
+type View = 'network' | 'map' | 'stream' | 'terms';
 
 const TABS: { id: View; label: string; sub: string }[] = [
   { id: 'network', label: 'Network Dynamics', sub: 'force-directed interaction graph' },
   { id: 'map', label: 'Spatial Topography', sub: 'the valley, the villages & the city' },
   { id: 'stream', label: 'Narrative Gravity', sub: 'whose story each section follows' },
+  { id: 'terms', label: 'Key Terms', sub: 'the book’s vocabulary as a concept network' },
 ];
 
 /** Brand mark: the eight-spoked wheel — one spoke per section. */
@@ -93,6 +95,7 @@ export default function App() {
             {view === 'network' && <NetworkGraph />}
             {view === 'map' && <MapView />}
             {view === 'stream' && <StreamGraph />}
+            {view === 'terms' && <TermsGraph />}
           </section>
           <SidePanel />
         </main>

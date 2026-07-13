@@ -108,4 +108,5 @@ export type Selection =
   | { kind: 'edge'; a: string; b: string; interactions: Interaction[] }
   | { kind: 'segment'; segment: ItinerarySegment }
   | { kind: 'location'; location: AtlasLocation }
-  | { kind: 'character'; id: string };
+  | { kind: 'character'; id: string }
+  | { kind: 'term'; id: string };
