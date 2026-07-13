@@ -60,15 +60,6 @@ export default function App() {
                 >
                   Curtis Hoffmann
                 </a>
-                {' · '}
-                <a
-                  href="https://forms.gle/ydBNztwZkeNYaWbc7"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-slate-400 hover:text-orange-300 underline decoration-dotted underline-offset-2"
-                >
-                  Share Your Feedback ↗
-                </a>
               </p>
             </div>
           </div>
