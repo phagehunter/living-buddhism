@@ -1,0 +1,28 @@
+# Living Buddhism — Character Map
+
+> A single-page digital-humanities dashboard by Curtis Hoffmann for Julia Cassaniti's ethnography Living Buddhism: Mind, Self, and Emotion in a Thai Community (Cornell University Press, 2015). Distant reading (a character network, a map of the valley, a narrative-gravity chart) beside close reading (scene-by-scene commentary, page citations, original per-section guides). The book is in copyright and is not reproduced; the guides are original synopses.
+
+Site: https://curtishoffmann.com/living-buddhism/
+Source: https://github.com/phagehunter/living-buddhism
+
+## Views
+
+- Network Dynamics: the community of "Mae Jaeng", more than forty people across two families, the town's friends and healers, the Karen Christian village of Ban Ko Tao, and the fieldwork circle; node size by degree centrality, edge width by scene frequency, color by social circle; dashed edges mark the Prologue.
+- Spatial Topography: pseudonymised field sites placed only per the book's published description, plus documented places (Chiang Mai, Bangkok, Lamphun); paths for the ethnographer's widening circle, the ambulance to Chiang Mai, and the family's devotional travel.
+- Narrative Gravity: whose story each of the eight sections follows (Sen, Gaew, Goy, Ban Ko Tao, everyone else), with a flash-forward overlay on the Prologue.
+- Guide tab: original per-section synopses, linked from every page citation in the commentary panel.
+
+## Controls
+
+- Section slider (Prologue to Conclusion), group toggles (Gaew and Sen's family, Goy's household, Mae Jaeng town, Ban Ko Tao and visitors), playback, commentary with thematic tags from the book's vocabulary (tham jai, jai yen, anicca, kreng jai).
+
+## Data and caveats
+
+- Data are TypeScript constants in `src/data/`; guides are static per-section JSON in `public/text/`. No backend, no API keys, one URL.
+- Field-site pins are approximate by design and do not identify real villages. Focalization percentages and interaction weights are editorial estimates.
+
+## Contact
+
+- Author: Curtis Hoffmann, https://curtishoffmann.com/
+- Issues: https://github.com/phagehunter/living-buddhism/issues
+- Sitemap: https://curtishoffmann.com/living-buddhism/sitemap.xml
