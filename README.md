@@ -1,6 +1,6 @@
 # Living Buddhism — Character Map
 
-**Live site: [phagehunter.github.io/living-buddhism](https://phagehunter.github.io/living-buddhism/)**
+**Live site: [curtishoffmann.com/living-buddhism](https://curtishoffmann.com/living-buddhism/)**
 
 A single-page digital-humanities dashboard for Julia Cassaniti's ethnography *Living Buddhism: Mind, Self, and Emotion in a Thai Community* (Cornell University Press, 2015), combining **distant reading** (computational visualization) with **close reading** (scene-by-scene commentary, page citations, and original section guides readable alongside every view).
 
